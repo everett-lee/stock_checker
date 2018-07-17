@@ -10,7 +10,7 @@ stock_checker.pull_data()
 msg = MIMEMultipart("mixed")
 msg["Subject"] = "Stocks update"
 
-stock_page = codecs.open("Stock data.html", "r")
+stock_page = codecs.open("stock_data.html", "r")
 msg_text = MIMEText(stock_page.read(), "html")
 stock_page.close()
 msg.attach(msg_text)
@@ -36,6 +36,5 @@ msg.attach(msg_img)
 server = smtplib.SMTP("smtp.gmail.com", 587)
 server.starttls()
 server.login("lestockupdates@gmail.com", "XXXXX")
-
 server.sendmail("lestockupdates@gmail.com", "everett.lee@btinternet.com", msg.as_string())
 server.quit()

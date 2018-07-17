@@ -48,13 +48,13 @@ def save_text_to_html(symbol, latest_price, current_profit, yearly_max, weekly_m
         </div>    
     </body>
     """ %(symbol, latest_price, current_profit, weekly_max, yearly_max, count)
-    output_html = open("Stock data.html", "a")
+    output_html = open("stock_data.html", "a")
     output_html.write(html_body)
     output_html.close()
 
  def pull_data()
     #create output file
-    output_html = open("Stock data.html", "w")
+    output_html = open("stock_data.html", "w")
     output_html.close()
     count = 1
     for symbol, purchase_price in stocks.items():
