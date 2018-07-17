@@ -23,7 +23,7 @@ months = mdates.MonthLocator()
 months_format = mdates.DateFormatter("%b")
 years_format = mdates.DateFormatter("\n\n%Y")
 
-key = "15Z9J3177Y3N6Z2B"
+key = "XXXXXXXXXXX"
 stocks = {"AAPL": 100, "MSFT": 42, "TSLA": 50}
 
 def get_json(url):
