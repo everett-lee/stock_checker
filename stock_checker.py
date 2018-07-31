@@ -52,9 +52,9 @@ def save_text_to_html(symbol, latest_price, current_profit, yearly_max, weekly_m
     output_html.write(html_body)
     output_html.close()
 
- def pull_data()
+def get_stock_data():
     #create output file
-    output_html = open("stock_data.html", "w")
+    output_html = open("Stock data.html", "w")
     output_html.close()
     count = 1
     for symbol, purchase_price in stocks.items():
@@ -75,7 +75,6 @@ def save_text_to_html(symbol, latest_price, current_profit, yearly_max, weekly_m
             
             # converts column values to numeric type
             df = df.apply(pd.to_numeric)
-            
             df["Rolling mean"] = df["Close"].rolling(window=4).mean()
 
             # gets latest price and profit
@@ -101,7 +100,7 @@ def save_text_to_html(symbol, latest_price, current_profit, yearly_max, weekly_m
             plt.legend(handles=[close[0], rolling_mean[0]])
             plt.title(symbol)
             plt.ylabel("Close($)")
-            plt.savefig("%s.png" %(symbol))
+            plt.savefig('%s.png' %(symbol))
 
             save_text_to_html(symbol, latest_price, current_profit, yearly_max, weekly_max, count
                               )
