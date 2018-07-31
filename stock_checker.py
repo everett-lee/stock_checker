@@ -10,7 +10,7 @@ import matplotlib.dates as mdates
 #get dates and deltas
 today = datetime.datetime.now()
 time_delta_week = datetime.timedelta(days = 7)
-time_delta_year = datetime.timedelta(days = 360)
+time_delta_year = datetime.timedelta(days = 365)
 last_week = today - time_delta_week
 last_year = today - time_delta_year
 str_today = today.strftime("%Y-%m-%d")
