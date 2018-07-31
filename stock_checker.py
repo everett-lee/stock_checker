@@ -66,7 +66,6 @@ def get_stock_data():
             print("Stock not found")
         
         else:
-
             df = pd.DataFrame.from_dict(stock_data["Time Series (Daily)"],
                                            orient="index",
                                            )
